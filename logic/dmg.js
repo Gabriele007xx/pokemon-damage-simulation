@@ -1,7 +1,12 @@
 //Types weaknesses
-let grassWeakTo = ["fire", "ice", "bug", "poison"];
+let grassWeakTo = ["fire", "ice", "bug", "poison", "flying"];
+let fireWeakTo = ["water", "ground", "rock"];
+let waterWeakTo = ["grass", "eletric"];
 //Types not effective to
-let grassResistantTo = ["eletric", "ground"];             
+let grassResistantTo = ["eletric", "ground","water", "grass"];    
+let fireResistantTo = ["bug", "steel", "fire", "grass", "ice"];
+let waterResistantTo = ["steel", "fire", "water", "ice"];
+
 
 /*
 Level is the level of the attacking Pokémon. If the used move is Beat Up, L is instead the level of the Pokémon performing the strike.
@@ -83,6 +88,7 @@ function DoubleDamage(pokemon_attacking, pokemon_defending, move)
 }
 function type1(pokemon_defending, move)
 {
+  // grass
   if(pokemon_defending.type1 == "grass")
   {
     if(grassWeakTo.includes(move.type)
@@ -90,6 +96,32 @@ function type1(pokemon_defending, move)
     return 2;
   }
   if(grassResistantTo.includes(move.type)
+  {
+    return 0.5;
+  }
+  return 1;
+  }
+  // water
+  if(pokemon_defending.type1 == "water")
+  {
+    if(waterWeakTo.includes(move.type)
+  {
+    return 2;
+  }
+  if(waterResistantTo.includes(move.type)
+  {
+    return 0.5;
+  }
+  return 1;
+  }
+  // fire
+   if(pokemon_defending.type1 == "fire")
+  {
+    if(fireWeakTo.includes(move.type)
+  {
+    return 2;
+  }
+  if(fireResistantTo.includes(move.type)
   {
     return 0.5;
   }
