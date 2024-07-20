@@ -1,3 +1,8 @@
+//Types weaknesses
+let grassWeakTo = ["fire", "ice", "bug", "poison"];
+//Types not effective to
+let grassResistantTo = ["eletric", "ground"];             
+
 /*
 Level is the level of the attacking Pokémon. If the used move is Beat Up, L is instead the level of the Pokémon performing the strike.
 A is the effective Attack stat of the attacking Pokémon if the used move is a physical move, or the effective Special Attack stat of the attacking Pokémon if the used move is a special move (for a critical hit, negative Attack or Special Attack stat stages are ignored). If the used move is Beat Up, A is instead the base Attack of the Pokémon performing the strike.
@@ -28,7 +33,86 @@ Type2 is the type effectiveness of the used move against the target's second typ
 random is realized as a multiplication by a random uniformly distributed integer between 85 and 100 (inclusive), followed by an integer division by 100. random is always 1 if Spit Up is used.
 */
 
-function gen3Attack()
+function gen3Attack(pokemon_attacking, pokemon_defending, move, field)
 {
-
+  let attack = move.type=="physical" ? pokemon_attacking.attack : pokemon_attacking.special_attack;
+  let defense = move.type=="physical" ? pokemon_defending.defense : pokemon_defending.special_defense;
+  return (((((2*pokemon_attacking.level)/5 + 2)*move.power*attack/defense)/50) * getBurn(pokemon_attacking) * 1 * 1 * getWeatherBoost(field, move) * FlashFire(pokemon_attacking, move) + 2) * 1 * 1 * DoubleDamage(pokemon_attacking, pokemon_defending, move) * 1 * 1 * STAB(pokemon_attacking, move) * type1(pokemon_defending, move) * type2(pokemon_defending, move) * (random()/100);
+}
+//85 e 100
+function random(min, max)
+{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function getBurn(pokemon_attacking)
+{
+  if(pokemon_attacking.status == "burn" && move.type=="physical")
+  {
+    if(pokemon_attacking.ability == "guts")
+    {
+        return 1;
+    }
+    return 0.5;
+  }
+}
+function getWeatherBoost(field, move)
+{
+  if(field.weather == "rain" && move.type=="water")
+  {
+    return 1.5;
+  } 
+if(field.weather == "sun" && move.type=="fire")
+  {
+    return 1.5;
+  } 
+return 1;
+}
+function FlashFire(pokemon_attacking, move)
+{
+  if(pokemon_attacking.ability == "flash fire" && move.type=="fire")
+  {
+    return 1.5;
+  }
+  return 1;
+}
+function DoubleDamage(pokemon_attacking, pokemon_defending, move)
+{
+  return 1;
+}
+function type1(pokemon_defending, move)
+{
+  if(pokemon_defending.type1 == "grass")
+  {
+    if(grassWeakTo.includes(move.type)
+  {
+    return 2;
+  }
+  if(grassResistantTo.includes(move.type)
+  {
+    return 0.5;
+  }
+  return 1;
+  }
+  
+}
+function type2(pokemon_defending, move)
+{
+  if(pokemon_defending.type2==null)
+  {
+    return 1;
+  }
+  else
+  {
+    return type1(pokemon_defending, move);
+  }
+}
+function STAB(pokemon_attacking, move)
+{
+  if(pokemon_attacking.type == move.type)
+  {
+    return 1.5;
+  }
+  return 1;
 }
