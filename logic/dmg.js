@@ -40,8 +40,8 @@ random is realized as a multiplication by a random uniformly distributed integer
 
 function gen3Attack(pokemon_attacking, pokemon_defending, move, field)
 {
-  let attack = move.type=="physical" ? pokemon_attacking.attack : pokemon_attacking.special_attack;
-  let defense = move.type=="physical" ? pokemon_defending.defense : pokemon_defending.special_defense;
+  let attack = move.type=="physical" ? pokemon_attacking.attack : pokemon_attacking.sattack;
+  let defense = move.type=="physical" ? pokemon_defending.defense : pokemon_defending.sdefense;
   return (((((2*pokemon_attacking.level)/5 + 2)*move.power*attack/defense)/50) * getBurn(pokemon_attacking) * 1 * 1 * getWeatherBoost(field, move) * FlashFire(pokemon_attacking, move) + 2) * 1 * 1 * DoubleDamage(pokemon_attacking, pokemon_defending, move) * 1 * 1 * STAB(pokemon_attacking, move) * type1(pokemon_defending, move) * type2(pokemon_defending, move) * (random()/100);
 }
 //85 e 100
