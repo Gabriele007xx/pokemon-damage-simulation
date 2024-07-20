@@ -2,6 +2,9 @@ class Pokemon {
     type1;
     type2;
     ability;
+    // stats
+    attack;
+    defense;
     constructor(type1, type2, ability)
     {
         this.type1 = type1;

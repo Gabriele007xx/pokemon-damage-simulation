@@ -53,7 +53,7 @@ function random(min, max)
 }
 function getBurn(pokemon_attacking)
 {
-  if(pokemon_attacking.status == "burn" && move.type=="physical")
+  if(pokemon_attacking.status == "burn" && move.manner=="physical")
   {
     if(pokemon_attacking.ability == "guts")
     {
