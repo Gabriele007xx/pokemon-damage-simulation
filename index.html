@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon move simulation</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="root">
@@ -13,6 +14,10 @@
             <input value="" type="number" id="attack1">
             <label>Defense:</label>
             <input value="" type="number" id="defense1">
+            <label>Special Attack:</label>
+            <input value="" type="number" id="sattack1">
+            <label>Special Defense:</label>
+            <input value="" type="number" id="sdefense1">
             <br>
 
             <label>Type 1:</label>
@@ -26,10 +31,15 @@
                 <option value="grass">Grass</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water</option>
+                <option value="null">Null</option>
               </select>
             <br>
 
             <label>Ability:</label>
+            <select name="ability1_1" id="ability1_1">
+                <option value="guts">Guts</option>
+                <option value="null">Null</option>
+              </select>
         </div>
         <div class="pokemon2">
             <h2>Pokemon 2 Editor</h2>
@@ -37,6 +47,10 @@
             <input value="" type="number" id="attack2">
             <label>Defense:</label>
             <input value="" type="number" id="defense2">
+            <label>Special Attack:</label>
+            <input value="" type="number" id="sattack2">
+            <label>Special Defense:</label>
+            <input value="" type="number" id="sdefense2">
             <br>
 
             <label>Type 1:</label>
@@ -50,33 +64,36 @@
                 <option value="grass">Grass</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water</option>
+                <option value="null">Null</option>
               </select>
             <br>
 
             <label>Ability:</label>
-
-            <select name="type2_2" id="type2_2">
-                <option value="grass">Grass</option>
-                <option value="fire">Fire</option>
-                <option value="water">Water</option>
+            <select name="ability2_1" id="ability2_2">
+                <option value="guts">Guts</option>
+                <option value="null">Null</option>
               </select>
             <br>
         </div>
+    </div>
 
-        <div class="move">
-            <h2>Move (Attack) Editor</h2>
-            <label>Attack:</label>
-            <input value="" type="number" id="attack2">
-            <label>Defense:</label>
-            <input value="" type="number" id="defense2">
-            <br>
-            <label>Move Type:</label>
-            <select name="move_type" id="move_type">
-                <option value="grass">Grass</option>
-                <option value="fire">Fire</option>
-                <option value="water">Water</option>
-              </select>
-        </div>
+    <div class="move">
+        <h2>Move (Attack) Editor</h2>
+        <label>Power:</label>
+        <input value="" type="number" id="power">
+        <label>Manner:</label>
+        <select name="manner" id="manner">
+            <option value="physical">Physical</option>
+            <option value="special">Special</option>
+          </select>
+        <br>
+
+        <label>Move Type:</label>
+        <select name="move_type" id="move_type">
+            <option value="grass">Grass</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+          </select>
     </div>
 
     <div class="field">
