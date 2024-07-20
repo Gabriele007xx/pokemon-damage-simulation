@@ -1,5 +1,6 @@
 const buttonAttack = document.getElementById("attackNow");
 // pokemon 1
+const level = document.getElementById("level");
 const A1 = document.getElementById("attack1");
 const D1 = document.getElementById("defense1");
 const SA1 = document.getElementById("sattack1");
@@ -25,9 +26,9 @@ const weather = document.getElementById("weather");
 const damage = document.getElementById("damage");
 function attack()
 {
-    const p1 = new Pokemon(type1_1.value, type1_2.value, ability1_1.value, A1.value, D1.value, SA1.value, SD1.value);
+    const p1 = new Pokemon(type1_1.value, type1_2.value, ability1_1.value, A1.value, D1.value, SA1.value, SD1.value, level.value);
     const p2 = new Pokemon(type1_2.value, type2_2.value, ability1_2.value, A2.value, D2.value, SA2.value, SD2.value);
-    const move = new Move(power.value, manner.value, move_type.value);
+    const move = new Move(power.value, move_type.value, manner.value);
     const field = new Field(weather.value);
     damage.innerHTML = "Danno calcolato: " + gen3Attack(p1, p2, move, field);
 }

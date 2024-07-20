@@ -40,9 +40,9 @@ random is realized as a multiplication by a random uniformly distributed integer
 
 function gen3Attack(pokemon_attacking, pokemon_defending, move, field)
 {
-  let attack = move.type=="physical" ? pokemon_attacking.attack : pokemon_attacking.sattack;
-  let defense = move.type=="physical" ? pokemon_defending.defense : pokemon_defending.sdefense;
-  return (((((2*pokemon_attacking.level)/5 + 2)*move.power*attack/defense)/50) * getBurn(pokemon_attacking) * 1 * 1 * getWeatherBoost(field, move) * FlashFire(pokemon_attacking, move) + 2) * 1 * 1 * DoubleDamage(pokemon_attacking, pokemon_defending, move) * 1 * 1 * STAB(pokemon_attacking, move) * type1(pokemon_defending, move) * type2(pokemon_defending, move) * (random()/100);
+  let attack0 = move.manner=="physical" ? pokemon_attacking.attack : pokemon_attacking.sattack;
+  let defense0 = move.manner=="physical" ? pokemon_defending.defense : pokemon_defending.sdefense;
+  return (((((2*pokemon_attacking.level)/5 + 2)*move.power*attack0/defense0)/50) * getBurn(pokemon_attacking) * 1 * 1 * getWeatherBoost(field, move) * FlashFire(pokemon_attacking, move) + 2) * 1 * 1 * DoubleDamage(pokemon_attacking, pokemon_defending, move) * 1 * 1 * STAB(pokemon_attacking, move) * type1(pokemon_defending, move) * type2(pokemon_defending, move) * (random(85, 100)/100);
 }
 //85 e 100
 function random(min, max)
@@ -61,6 +61,7 @@ function getBurn(pokemon_attacking)
     }
     return 0.5;
   }
+  return 1;
 }
 function getWeatherBoost(field, move)
 {
@@ -92,9 +93,9 @@ function type1(pokemon_defending, move)
   if(pokemon_defending.type1 == "grass")
   {
     if(grassWeakTo.includes(move.type))
-  {
+    {
     return 2;
-  }
+    }
   if(grassResistantTo.includes(move.type))
   {
     return 0.5;
@@ -127,11 +128,12 @@ function type1(pokemon_defending, move)
   }
   return 1;
   }
+  return 1;
   
 }
 function type2(pokemon_defending, move)
 {
-  if(pokemon_defending.type2==null)
+  if(pokemon_defending.type2=="null")
   {
     return 1;
   }
