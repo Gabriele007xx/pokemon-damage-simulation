@@ -5,7 +5,7 @@ class Move {
     constructor(power, type, manner)
     {
         this.manner = manner;
-        this.power = power;
+        this.power = parseInt(power);
         this.type = type;
     }
 }
