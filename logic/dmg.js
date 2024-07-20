@@ -91,11 +91,11 @@ function type1(pokemon_defending, move)
   // grass
   if(pokemon_defending.type1 == "grass")
   {
-    if(grassWeakTo.includes(move.type)
+    if(grassWeakTo.includes(move.type))
   {
     return 2;
   }
-  if(grassResistantTo.includes(move.type)
+  if(grassResistantTo.includes(move.type))
   {
     return 0.5;
   }
@@ -104,11 +104,11 @@ function type1(pokemon_defending, move)
   // water
   if(pokemon_defending.type1 == "water")
   {
-    if(waterWeakTo.includes(move.type)
+    if(waterWeakTo.includes(move.type))
   {
     return 2;
   }
-  if(waterResistantTo.includes(move.type)
+  if(waterResistantTo.includes(move.type))
   {
     return 0.5;
   }
@@ -117,11 +117,11 @@ function type1(pokemon_defending, move)
   // fire
    if(pokemon_defending.type1 == "fire")
   {
-    if(fireWeakTo.includes(move.type)
+    if(fireWeakTo.includes(move.type))
   {
     return 2;
   }
-  if(fireResistantTo.includes(move.type)
+  if(fireResistantTo.includes(move.type))
   {
     return 0.5;
   }
