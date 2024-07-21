@@ -176,9 +176,22 @@ function type1(pokemon_defending, move)
   }
   return 1;
   }
+  
   if(pokemon_defending.type2 == "steel")
   {
-    
+     if(steelWeakTo.includes(move.type))
+  {
+    return 2;
+  }
+  if(steelResistantTo.includes(move.type))
+  {
+    return 0.5;
+  }
+  if(steelImmuneTo.includes(move.type))
+  {
+    return 0;
+  }
+  return 1;
   }
   
   return 1;
