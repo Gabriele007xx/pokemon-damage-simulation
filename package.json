@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build":"tsc --noEmit && tsc --outDir build",
+    "start":"node build/index.js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4"
+  }
+}

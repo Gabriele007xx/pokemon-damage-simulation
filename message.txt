@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tailwind Intro</title>
+</head>
+
+          FARE UN FILE 'Tailwind.config.js' PER FARLO FUNZIONARE
+<body>
+  <!-- 
+  BORDI
+  border (1px)
+  border-[]
+  border-x-[] (asse x)
+  border-y-[] (asse y)
+  border-t-[] (top) ... (t,r,b,l)
+  border-colore-numero
+  rounded (border radius)
+  -->
+
+
+  <!-- 
+  DIMENSIONI 
+    Larghezza = width = w-[]
+    w-full (100%)
+    w-screen (100vw)
+
+    Altezza = height = h-[]
+    h-full (100%)
+    h-screen (100vh)
+  -->
+
+
+  <!-- 
+  MARGINI / PADDING
+    Margin = m 
+    m-[] (da tutte le parti)
+    mt-[] (top)
+    mb-[] (bottom)
+    mx-[] (right/left)
+    my-[] (top/bottom)
+    mr-[] (right)
+    ml-[] (left)
+
+    Padding = p 
+    p-[] (da tutte le parti)
+    pt-[] (top)
+    pb-[] (bottom)
+    px-[] (right/left)
+    py-[] (top/bottom)
+    pr-[] (right)
+    pl-[] (left)
+   -->
+
+  <!-- 
+    COLORI
+      Testi 
+      text-colore-grado/saturazione
+      text-[]
+
+      Sfondi
+      bg-colore-grado/saturazione
+      bg-[]
+    -->
+
+
+
+  <!-- 
+      TESTI
+        Dimensioni
+        text-sm (xs, sm, lg, xl, 2xl, 9xl)
+        text-[] (dimensione che vogliamo noi px, %, rem, em)
+
+        Stile
+        font-light, font-normal, font-medium, font-semibold, font-bold, font-[700]
+        italic (corsivo)
+     -->
+
+
+
+
+  <!-- 
+      DISPLAY
+      block (display: block)
+      inline-block (display: inline-block)
+
+      FLEX
+      flex (display: flex)
+
+      FLEX-DIRECTION
+      flex-row, flex-row-reverse, flex-col, flex-col-reverse
+
+      JUSTIFY-CONTENT
+      justify-center (justify-content: center)
+      justify-start (justify-content: start)
+      justify-end (justify-content: end)
+      justify-between (justify-content: space-between)
+      justify-around (justify-content: space-around)
+      justify-evenly (justify-content: space-evenly)
+
+      ALIGN-ITEMS
+      items-center (align-items: center)
+      items-start (align-item: flex-start)
+      items-end (align-items: flex-end)
+
+      GRID
+      grid (display: grid)
+      grid-cols-numero, grid-rows-numero (numero di colonne, numero di righe)
+      gap-numero (spazio tra gli elementi)
+     -->
+
+
+  <!-- 
+      POSITION
+      relative, absolute, fixed, sticky 
+      top-0 top-[] ....
+     -->
+
+  <!--
+        MEDIA QUERIES
+        sm, md, lg, xl, 2xl 
+        (vedere documentazione per riferimenti)
+      -->
+
+
+  <!-- 
+        HOVER/TRANSITION/ANIMATION
+        :hover, :focus
+
+        TRANSITION
+        transition 
+        delay-150
+        duration-300
+
+        ANIMATION
+        animate-spin
+        animate-ping
+        animate-pulse
+        animate-bounce
+
+      -->
+
+
+  <!-- 
+        ASSETS (IMMAGINI/FONT/VARIE)
+
+
+
+       -->
+
+       
+</body>
+
+</html>
